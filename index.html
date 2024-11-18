@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mia Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Aggiungo il jumbotron -->
+    <div class="jumbotron"></div>
+    
+    <div class="container">
+        <h1>La Mia Todo List</h1>
+        
+        <!-- Sezione per aggiungere nuove task -->
+        <section class="add-task-section">
+            <h2>Aggiungi una nuova task</h2>
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Inserisci una nuova task..."
+                    required
+                >
+            </div>
+        </section>
+
+        <!-- Sezione To Do -->
+        <section class="todo-section">
+            <h2>To Do</h2>
+            <ul id="todoList" class="task-list">
+                <!-- Le task da completare verranno inserite qui dinamicamente -->
+            </ul>
+        </section>
+
+        <!-- Sezione Done -->
+        <section class="done-section">
+            <h2>Done</h2>
+            <ul id="doneList" class="task-list">
+                <!-- Le task completate verranno inserite qui dinamicamente -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

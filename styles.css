@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  color: #2b2b2b;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Stile del Jumbotron */
+.jumbotron {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('poppy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+h1 {
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #565656;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+#taskInput {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #2564cf;
+  background: white;
+}
+
+#taskInput::placeholder {
+  color: #a9a9a9;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Modifica per allineare contenuto e pulsante */
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.task-content::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border: 2px solid #2564cf;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#doneList .task-content::before {
+  background-color: #2564cf;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Modifica: applica la decorazione del testo solo al contenuto della task */
+#doneList .task-content {
+  color: #666;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4444;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-decoration: none !important; /* Assicura che non venga mai barrato */
+}
+
+.task-list li:hover .delete-btn {
+  opacity: 0.7;
+}
+
+.delete-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.1);
+}
+
+.task-list li:hover {
+  background-color: #f0f6ff;
+  border-color: #2564cf;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(37, 100, 207, 0.15);
+}
+
+#doneList li::before {
+  background-color: #2564cf;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#doneList li {
+  color: #666;
+  background-color: #fafafa;
+}
+
+@media (max-width: 600px) {
+  .container {
+      margin: 1rem auto;
+  }
+  
+  section {
+      padding: 1rem;
+  }
+  
+  h1 {
+      font-size: 1.5rem;
+  }
+}
